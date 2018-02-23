@@ -58,7 +58,7 @@ data: object 滑动位移<br>
   offy:当前对象左上方相对y坐标<br>
 }<br>
 obj: object 滑动对象
-> 不能用this，因为指向对象不同
+##### > 不能用this，因为指向对象不同
 
  #### 示例：
  ```javascript
