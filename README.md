@@ -17,8 +17,8 @@
 
 详细：
 
-返回当前滑动方向与滑动对象
-data: string 滑动方向
+返回当前滑动方向与滑动对象<br>
+data: string 滑动方向<br>
 obj: object 滑动对象
 
 示例：
