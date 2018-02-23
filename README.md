@@ -19,7 +19,7 @@
 返回当前滑动方向与滑动对象<br>
 data: string 滑动方向<br>
 obj: object 滑动对象
-<span style="color:red">obj不能用this，对象指向不同</span>
+> 不能用this，因为指向对象不同
 
  #### 示例：
  ```javascript
@@ -40,7 +40,7 @@ obj: object 滑动对象
  #### 示例：
  ```javascript
  $(".test").J_swipe({
-     isOffset:true
+     isOffset:true
  })
  ```
  
@@ -58,7 +58,7 @@ data: object 滑动位移<br>
   offy:当前对象左上方相对y坐标<br>
 }<br>
 obj: object 滑动对象
-<span style="color:red">obj不能用this，对象指向不同</span>
+> 不能用this，因为指向对象不同
 
  #### 示例：
  ```javascript
@@ -83,6 +83,6 @@ obj: object 滑动对象
  #### 示例：
  ```javascript
  $(".test").J_swipe({
-     swipeDis:50
+     swipeDis:50
  })
  ```
