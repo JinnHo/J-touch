@@ -19,6 +19,7 @@
 返回当前滑动方向与滑动对象<br>
 data: string 滑动方向<br>
 obj: object 滑动对象
+<span style="color:red">obj不能用this，对象指向不同</span>
 
  #### 示例：
  ```javascript
@@ -28,7 +29,6 @@ obj: object 滑动对象
      }
  })
  ```
- <br>
  ### isOffset
 
 类型：{boolean}
@@ -44,7 +44,6 @@ obj: object 滑动对象
  })
  ```
  
- <br>
   ### moveFn(data,obj)
 
 类型：{string | Function}
@@ -59,6 +58,7 @@ data: object 滑动位移<br>
   offy:当前对象左上方相对y坐标<br>
 }<br>
 obj: object 滑动对象
+<span style="color:red">obj不能用this，对象指向不同</span>
 
  #### 示例：
  ```javascript
@@ -72,7 +72,6 @@ obj: object 滑动对象
      }
  })
  ```
- <br>
   ### swipeDis
 
 类型：{number}
