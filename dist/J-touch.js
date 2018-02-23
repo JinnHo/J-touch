@@ -1,9 +1,9 @@
 /**
  * 获取移动端touch事件方向与距离
  * @author JinnHo 309126288@qq.com
- * @param callback(data) 自定义回调函数，返回touchend结果
+ * @param callback(data,obj) 自定义回调函数，返回touchend结果
  * @param isOffset 自定义参数 是否获取相对位置（默认false）
- * @param fn 自定义参数 是否获取touchmove移动的位置（默认false）
+ * @param moveFn(data,obj) 自定义参数 是否获取touchmove移动的位置（默认false）
  * @param swipeDis 自定义参数 滑动距离（默认100）
  * @constructor
  */
