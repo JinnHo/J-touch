@@ -26,7 +26,7 @@ obj: object 滑动对象
  ```javascript
  $(".test").J_swipe({
      callback:function(data,obj){
-         $(obj).css({background:"red"});
+         $(obj).html(data);
      }
  })
  ```
