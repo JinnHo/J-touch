@@ -28,7 +28,7 @@ obj: object 滑动对象
      }
  })
  ```
- 
+ <br>
  ### isOffset
 
 类型：{boolean}
@@ -44,6 +44,7 @@ obj: object 滑动对象
  })
  ```
  
+ <br>
   ### moveFn(data,obj)
 
 类型：{string | Function}
@@ -51,12 +52,12 @@ obj: object 滑动对象
  #### 详细：
 返回当前滑动距离与对象<br>
 data: object 滑动位移<br>
-{
-  x:水平方向位移
-  y:垂直方向位移
-  offx:当前对象左上方相对x坐标
-  offy:当前对象左上方相对y坐标
-}
+{<br>
+  x:水平方向位移<br>
+  y:垂直方向位移<br>
+  offx:当前对象左上方相对x坐标<br>
+  offy:当前对象左上方相对y坐标<br>
+}<br>
 obj: object 滑动对象
 
  #### 示例：
@@ -71,7 +72,7 @@ obj: object 滑动对象
      }
  })
  ```
- 
+ <br>
   ### swipeDis
 
 类型：{number}
