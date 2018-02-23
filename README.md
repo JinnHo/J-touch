@@ -52,10 +52,10 @@ obj: object 滑动对象
 返回当前滑动距离与对象<br>
 data: object 滑动位移<br>
 {<br>
-   &nbsp;x:水平方向位移<br>
-   y:垂直方向位移<br>
-   offx:当前对象左上方相对x坐标<br>
-   offy:当前对象左上方相对y坐标<br>
+   &emsp;x:水平方向位移<br>
+   &emsp;y:垂直方向位移<br>
+   &emsp;offx:当前对象左上方相对x坐标<br>
+   &emsp;offy:当前对象左上方相对y坐标<br>
 }<br>
 obj: object 滑动对象
 > **Note:** 不能用this，因为指向对象不同
