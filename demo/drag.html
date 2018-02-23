@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖动方块示例</title>
+    <style>
+        .test {
+            width: 400px;
+            height: 400px;
+            background: red;
+            position: absolute;
+            left:100px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+<div class="test"></div>
+<div class="test"></div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../dist/J-touch.js"></script>
+<script>
+    $(".test").J_swipe({
+        //isOffset：获取移动位置是否为相对位置，moveFn：获取移动位置坐标函数
+        //offx,offy：为当前拖动物体的x，y相对位置
+        isOffset:true,
+        moveFn:function(data,obj){
+            $(obj).css({left:data.offx+data.x,top:data.offy+data.y,background:"blue"});
+        },
+        callback:function(data,obj){
+            $(obj).css({background:"red"});
+        }
+    })
+</script>
+</body>
+</html>

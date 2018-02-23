@@ -1,27 +1,26 @@
 /**
  * 获取移动端touch事件方向与距离
  * @author JinnHo 309126288@qq.com
- * @version 1.0  2018/1/26
  * @param callback(data) 自定义回调函数，返回touchend结果
  * @param isOffset 自定义参数 是否获取相对位置（默认false）
- * @param moveFn 自定义参数 是否获取touchmove移动的位置（默认false）
+ * @param fn 自定义参数 是否获取touchmove移动的位置（默认false）
  * @param swipeDis 自定义参数 滑动距离（默认100）
  * @constructor
  */
 (function ($) {
     $.fn.extend({
-        J_swipe: function (callback,obj) {
-            var _extends = arguments[1] ? arguments[1] : [];
+        J_swipe: function () {
+            var _extends = arguments[0] ? arguments[0] : [];
             if (typeof _extends != "object") {
                 console.log("param error : extends param type(object) ->" + typeof _extends);
                 return;
             }
             var isOffset = _extends.offset == true ? 1 : 0;
-            var moveFn = _extends.fn ? _extends.fn : false;
+            var fn = _extends.moveFn ? _extends.moveFn : false;
             var swipeDis = _extends.swipeDis ? _extends.swipeDis : 100;
+            var callback = _extends.callback ? _extends.callback : function(){};
 
-            var _this = this;
-            var offset = {x: _this.offset().left, y: _this.offset().top};
+            var offset = {x: 0, y: 0};
             var touchesStart = {x: 0, y: 0};
             var touchesMove = {x: 0, y: 0};
             var touchesEnd = {x: 0, y: 0};
@@ -32,7 +31,7 @@
                     x: e.changedTouches[0].pageX - ((offset.x) * isOffset),
                     y: e.changedTouches[0].pageY - ((offset.y) * isOffset)
                 };
-                offset = {x: _this.offset().left, y: _this.offset().top};
+                offset = {x: $(this).offset().left, y: $(this).offset().top};
             });
             this.on("touchend", function (e) {
                 touchesEnd = {
@@ -50,7 +49,7 @@
                 } else if (dis.y < -swipeDis && Math.abs(dis.y) > Math.abs(dis.x)) {
                     flag = "up";
                 }
-                callback(flag,this);
+                callback(flag, $(this));
             });
             this.on("touchmove", function (e) {
                 e.preventDefault();
@@ -58,14 +57,14 @@
                     x: e.changedTouches[0].pageX - ((offset.x) * isOffset),
                     y: e.changedTouches[0].pageY - ((offset.y) * isOffset)
                 };
-                if (typeof(moveFn) === 'function') {
+                if (typeof(fn) === 'function') {
                     moveDis = {
                         x: touchesMove.x - touchesStart.x,
                         y: touchesMove.y - touchesStart.y,
                         offx: offset.x,
                         offy: offset.y
                     };
-                    moveFn(moveDis, this);
+                    fn(moveDis, $(this));
                 }
             });
         }

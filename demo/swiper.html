@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动示例</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .test{
+            width:400px;
+            height:400px;
+            background: red;
+            position: relative;
+            margin:0 auto;
+            margin-top:20px;
+            line-height: 400px;
+            text-align: center;
+        }
+        .test > span{
+            font-size: 100px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<div class="test"><span></span></div>
+<div class="test"><span></span></div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../dist/J-touch.js"></script>
+<script>
+    $(".test").J_swipe({
+        //data默认返回方向判断，obj返回当前滑动对象，不能用$(this),因为指向对象不同
+        callback:function(data,obj){
+            $(obj).find("span").html(data);
+        }
+    })
+</script>
+</body>
+</html>

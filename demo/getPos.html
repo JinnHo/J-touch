@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取坐标示例</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .test {
+            width: 400px;
+            height: 400px;
+            background: red;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 20px;
+            line-height: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="test"></div>
+<div class="test"></div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../dist/J-touch.js"></script>
+<script>
+    $(".test").J_swipe({
+        //isOffset：获取移动位置是否为相对位置，moveFn：获取移动位置坐标方法
+        isOffset:true,
+        moveFn:function(data,obj){
+            console.log(data.x,data.y,data.offx,data.offy);
+        }
+    })
+</script>
+</body>
+</html>
